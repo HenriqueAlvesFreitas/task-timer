@@ -1,6 +1,7 @@
+import { ITask } from "../../../Types/Task";
 
 
-export default function Item({title, time}: {title: string, time: string}){
+export default function Item({title, time, selected, completed, id}: ITask){
     
     return(
         <li className='item'>

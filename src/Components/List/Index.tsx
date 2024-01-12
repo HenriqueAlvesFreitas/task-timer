@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MyList } from './style'
 import Item from './Item/Index'
+import { ITask } from '../../Types/Task'
 
-export default function List(){
 
-    const taskList = [{title: 'nome da tarefa', time: '02:00:00'}, {title: 'nome da tarefa 2', time: '00:30:00'}]
+
+export default function List({taskList}: {taskList: ITask[]}){
+
+
 
     return(
         <MyList>
