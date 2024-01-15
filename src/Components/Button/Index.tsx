@@ -1,13 +1,19 @@
 import React from "react";
 import { MyButton } from "./style";
 
+interface Props{
+    text : string,
+    onClick?: () => void
+}
 
-export default function Button({text}: {text : string}){
+export default function Button({text, onClick}: Props){
 
  
 
         return(
-            <MyButton>
+            <MyButton 
+                onClick={onClick}
+            >
                 {text}
             </MyButton>
         )

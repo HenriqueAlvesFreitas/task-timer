@@ -19,6 +19,20 @@ function App() {
     )))
   }
 
+  const finishTask = () =>{
+    if(selectedTask) {
+        setTaskList(list => list.map(item=>{
+          if(item.selected){
+            return {...item, selected:false, completed:true}
+          }
+          else{
+            return item
+          }
+        }))
+    }
+
+  }
+
   return (
     <MyApp> 
       <Form setTaskList={setTaskList}/>
@@ -26,7 +40,7 @@ function App() {
         taskList={taskList}
         selectTask={selectTask}
       />
-      <StopWatch selectedTask={selectedTask}/>
+      <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
     </MyApp>
   );
 }

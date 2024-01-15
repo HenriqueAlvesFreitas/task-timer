@@ -6,10 +6,11 @@ import Watch from "./Watch/Index";
 import { timeToSeconds } from "../../Common/Utils/Time";
 
 interface Props{
-    selectedTask?: ITask
+    selectedTask?: ITask,
+    finishTask: () => void
 }
 
-export default function StopWatch({selectedTask} :  Props){
+export default function StopWatch({selectedTask, finishTask} :  Props){
 
     const [time, setTime] = useState<number>(timeToSeconds("00:00:00"))
     useEffect(()=>{
@@ -18,6 +19,19 @@ export default function StopWatch({selectedTask} :  Props){
         }
     }, [selectedTask])
    
+    const startTask = (count : number) => {
+       
+        setTimeout(()=>{
+            if(count > 0){
+                setTime(count - 1)
+                return startTask(count - 1)
+            }else{
+                finishTask()
+            }
+        }, 1000)
+                    
+    }
+
 
     return(
         <MyStopWatch>
@@ -26,7 +40,7 @@ export default function StopWatch({selectedTask} :  Props){
             <div className="relogioWrapper">
                 <Watch time={time}/>
             </div>
-            <Button text="começar"/>        
+            <Button text="começar" onClick={()=>startTask(time)}/>        
         </MyStopWatch>
     )
 

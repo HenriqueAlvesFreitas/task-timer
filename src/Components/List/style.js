@@ -66,7 +66,7 @@ export const MyList = styled.aside`
 
   .concluido {
     display: block;
-    background-image: url('../../Assets/Img/check-mark.svg');
+    background-image: url("../../Assets/img/check-mark.svg");
     background-repeat: no-repeat;
     background-size: 38px 38px;
     position: absolute;
