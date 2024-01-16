@@ -27,12 +27,13 @@ export default function Item({title, time, selected, completed, id, selectTask}:
                 } 
             }}
         >
+           
             <h3>{title}</h3>
+            
             {completed && 
                 <span 
                     className="concluido" 
                     aria-label="completed task"
-                    style={{backgroundImage:`url(${checkMark})`}}
                 />}
             <span>{time}</span>
         </li>

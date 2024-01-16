@@ -5,6 +5,7 @@ import StopWatch from '../Components/StopWatch/Index';
 import { MyApp } from './style';
 import { ITask } from '../Types/Task';
 
+
 function App() {
   const [taskList, setTaskList] = useState<ITask[] | []>([])
   const [selectedTask, setSelected] = useState<ITask>()

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import check from './../../Assets/img/check-mark.svg'
 
 
 export const MyList = styled.aside`
@@ -66,7 +67,7 @@ export const MyList = styled.aside`
 
   .concluido {
     display: block;
-    background-image: url("../../Assets/img/check-mark.svg");
+    background-image: url(${check});
     background-repeat: no-repeat;
     background-size: 38px 38px;
     position: absolute;
