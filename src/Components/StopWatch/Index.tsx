@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ITask } from "../../Types/Task";
 import Button from "../Button/Index";
 import { MyStopWatch } from "./Style";
 import Watch from "./Watch/Index";
 import { timeToSeconds } from "../../Common/Utils/Time";
+import MyContext from "../../Context/Context";
 
 interface Props{
     selectedTask?: ITask,
     finishTask: () => void
 }
 
+
+
 export default function StopWatch({selectedTask, finishTask} :  Props){
+
+
+    const {theme, toggleTheme} = useContext(MyContext)
 
     const [time, setTime] = useState<number>(timeToSeconds("00:00:00"))
     useEffect(()=>{
@@ -32,6 +38,8 @@ export default function StopWatch({selectedTask, finishTask} :  Props){
                     
     }
 
+    
+
 
     return(
         <MyStopWatch>
@@ -40,7 +48,8 @@ export default function StopWatch({selectedTask, finishTask} :  Props){
             <div className="relogioWrapper">
                 <Watch time={time}/>
             </div>
-            <Button text="começar" onClick={()=>startTask(time)}/>        
+            <Button text="começar" onClick={()=>startTask(time)}/>
+            <Button text="Swap Theme" onClick={()=> toggleTheme(theme === 'light' ? 'dark' : 'light')}/>          
         </MyStopWatch>
     )
 

@@ -73,3 +73,7 @@ export const MyForm = styled.form`
 export const DarkTheme = {
   backgroundColor: '#ffff'
 }
+
+export const LightTheme = {
+  backgroundColor: '#000'
+}

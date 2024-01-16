@@ -1,19 +1,27 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Form from '../Components/Form/Index';
 import List from '../Components/List/Index';
 import StopWatch from '../Components/StopWatch/Index';
 import { MyApp } from './style';
 import { ITask } from '../Types/Task';
-import { defaultContextValue } from '../Context/Context';
 
 import MyContext from '../Context/Context';
 import { ThemeProvider } from 'styled-components';
-import { DarkTheme } from '../Components/Form/style';
+import { DarkTheme, LightTheme } from '../Components/Form/style';
 
 
 function App() {
   const [taskList, setTaskList] = useState<ITask[] | []>([])
   const [selectedTask, setSelected] = useState<ITask>()
+  
+  const [theme, toggleTheme] = useState<string>('light')
+
+  const defaultContextValue = {
+      teste: "meu teste 2",
+      color: "#ffff",
+      theme: theme,
+      toggleTheme: toggleTheme
+  }
 
   const selectTask = (selectedTask : ITask) =>{
     setSelected(selectedTask);
@@ -41,7 +49,7 @@ function App() {
 
   return (
     <MyContext.Provider value={defaultContextValue}>
-      <ThemeProvider theme={DarkTheme}>
+      <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
         <MyApp> 
           <Form setTaskList={setTaskList}/>
           <List 

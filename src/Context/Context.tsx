@@ -1,17 +1,21 @@
-import { createContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 
 interface Props {
     teste: string,
-    color: string
+    color: string,
+    theme: string,
+    toggleTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const defaultContextValue = {
-    teste: "meu teste 2",
-    color: "#ffff"
+const Default = {
+    teste: '',
+    color: '',
+    theme: '',
+    toggleTheme:()=> {}
 }
 
 
-const MyContext = createContext<Props>(defaultContextValue)
+const MyContext = createContext<Props>(Default)
 
 export default MyContext
