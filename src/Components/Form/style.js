@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+import MyContext from "../../Context/Context";
+import { useContext } from "react";
+
+
 export const MyForm = styled.form`
 
   display:flex;
@@ -27,7 +31,8 @@ export const MyForm = styled.form`
       box-sizing: border-box;
       border: unset;
       border-radius: 5px;
-      background-color: #5D677C;
+      background-color: ${props => props.theme.backgroundColor};
+      //background-color: #5D677C;
       box-shadow: 0px 2px 4px #2D2B2B9F inset;
       
       &::placeholder {
@@ -62,4 +67,9 @@ export const MyForm = styled.form`
     }
   }
 
+
 `
+
+export const DarkTheme = {
+  backgroundColor: '#ffff'
+}

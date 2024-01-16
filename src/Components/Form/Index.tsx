@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { MyForm } from './style'
 import Button from '../Button/Index'
 import { ITask } from '../../Types/Task'
 import {v4 as uuidv4} from 'uuid';
+import MyContext from '../../Context/Context';
 
 export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.SetStateAction<ITask[]>>}){
 
@@ -15,12 +16,14 @@ export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.
         setState({title: "", time: "00:00:00"})
     }
 
+        const {teste, color} = useContext(MyContext)
+
         return(
             <MyForm onSubmit={addTask}>
                 <div className='inputContainer'>
                     <label
                         htmlFor='task'>
-                            Adicione um novo estudo
+                            {teste}
                     </label>
                     <input 
                         type='text'

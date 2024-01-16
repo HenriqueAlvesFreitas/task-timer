@@ -4,6 +4,11 @@ import List from '../Components/List/Index';
 import StopWatch from '../Components/StopWatch/Index';
 import { MyApp } from './style';
 import { ITask } from '../Types/Task';
+import { defaultContextValue } from '../Context/Context';
+
+import MyContext from '../Context/Context';
+import { ThemeProvider } from 'styled-components';
+import { DarkTheme } from '../Components/Form/style';
 
 
 function App() {
@@ -35,14 +40,18 @@ function App() {
   }
 
   return (
-    <MyApp> 
-      <Form setTaskList={setTaskList}/>
-      <List 
-        taskList={taskList}
-        selectTask={selectTask}
-      />
-      <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
-    </MyApp>
+    <MyContext.Provider value={defaultContextValue}>
+      <ThemeProvider theme={DarkTheme}>
+        <MyApp> 
+          <Form setTaskList={setTaskList}/>
+          <List 
+            taskList={taskList}
+            selectTask={selectTask}
+          />
+          <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
+        </MyApp>
+      </ThemeProvider>
+    </MyContext.Provider>
   );
 }
 
