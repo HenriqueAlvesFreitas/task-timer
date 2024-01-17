@@ -4,11 +4,13 @@ import { MyForm } from './style'
 import Button from '../Button/Index'
 import { ITask } from '../../Types/Task'
 import {v4 as uuidv4} from 'uuid';
-import MyContext from '../../Context/Context';
+import { useTranslation } from 'react-i18next';
 
 export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.SetStateAction<ITask[]>>}){
 
     const [state, setState] = useState({title: "", time: "00:00:00"})
+
+    const [t] = useTranslation("global")
 
     const addTask = (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
@@ -16,14 +18,12 @@ export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.
         setState({title: "", time: "00:00:00"})
     }
 
-        const {teste, color} = useContext(MyContext)
-
         return(
             <MyForm onSubmit={addTask}>
                 <div className='inputContainer'>
                     <label
                         htmlFor='task'>
-                            {teste}
+                            {t("form.titleLabel")}
                     </label>
                     <input 
                         type='text'
@@ -31,11 +31,11 @@ export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.
                         name='task'
                         value={state.title}
                         onChange={e => setState({...state, title: e.target.value})}
-                        placeholder='Qual tarefa deseja realizar ?'
+                        placeholder={t("form.placeholder")}
                     />
                 </div>
                 <div className='inputContainer'>
-                <label>Tempo</label>
+                <label>{t("form.timeLabel")}</label>
                     <input 
                         type='time'
                         step='1'
@@ -48,7 +48,7 @@ export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.
                         max='1:30:00'
                     />
                 </div>
-                <Button text='Adicionar'/>
+                <Button text={t("form.button")}/>
             </MyForm>
         )
     

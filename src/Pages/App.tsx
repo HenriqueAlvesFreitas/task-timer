@@ -2,13 +2,12 @@ import { useContext, useState } from 'react';
 import Form from '../Components/Form/Index';
 import List from '../Components/List/Index';
 import StopWatch from '../Components/StopWatch/Index';
-import { MyApp } from './style';
+import { MyApp, MyBody } from './style';
 import { ITask } from '../Types/Task';
 
 import MyContext from '../Context/Context';
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme, LightTheme } from '../Context/Theme';
-import { MyBody } from '../bodyStyle';
 
 
 

@@ -1,0 +1,17 @@
+{
+    "form":{
+        "titleLabel": "Adicione uma nova tarefa",
+        "timeLabel": "Tempo",
+        "placeholder": "Qual tarefa deseja realizar ?",
+        "button": "Adicionar"
+    },
+    "list":{
+        "title": "Tarefas do Dia"
+    },
+    "stopWatch":{
+         "title":"Escolha um card e inicie o Crônometro",
+         "button": "Começar",
+         "themeButton": "Trocar tema",
+         "languageButton": "Trocas lingua"
+    }
+}

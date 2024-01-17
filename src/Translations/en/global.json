@@ -1,0 +1,17 @@
+{
+    "form":{
+        "titleLabel": "Add a Task",
+        "timeLabel": "Time",
+        "placeholder": "Write your task",
+        "button": "Add"
+    },
+    "list":{
+        "title": "Day Tasks"
+    },
+    "stopWatch":{
+         "title":"Choose a card and start the countdown",
+         "button": "Start",
+         "themeButton": "Switch Theme",
+         "languageButton": "Switch Language"
+    }
+}

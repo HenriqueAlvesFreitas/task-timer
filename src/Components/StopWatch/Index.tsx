@@ -5,6 +5,7 @@ import { MyStopWatch } from "./Style";
 import Watch from "./Watch/Index";
 import { timeToSeconds } from "../../Common/Utils/Time";
 import MyContext from "../../Context/Context";
+import { useTranslation } from "react-i18next";
 
 interface Props{
     selectedTask?: ITask,
@@ -12,9 +13,11 @@ interface Props{
 }
 
 
-
 export default function StopWatch({selectedTask, finishTask} :  Props){
 
+    const [t, i18n] = useTranslation("global")
+
+    const [language, setLanguage] = useState("en")
 
     const {theme, toggleTheme} = useContext(MyContext)
 
@@ -38,17 +41,21 @@ export default function StopWatch({selectedTask, finishTask} :  Props){
                     
     }
 
+    const handleChangeLanguage = () =>{
+        setLanguage(language === "en" ? "pt" : "en")
+        i18n.changeLanguage(language === "en" ? "pt" : "en")
+    }
+
     
-
-
     return(
         <MyStopWatch>
-            <p className="titulo">Escolha um card e inicie o crônometro</p>
+            <p className="titulo">{t("stopWatch.title")}</p>
             <div className="relogioWrapper">
                 <Watch time={time}/>
             </div>
-            <Button text="começar" onClick={()=>startTask(time)}/>
-            <Button text="Swap Theme" onClick={()=> toggleTheme(theme === 'light' ? 'dark' : 'light')}/>          
+            <Button text={t("stopWatch.button")} onClick={()=>startTask(time)}/>
+            <Button text={t("stopWatch.themeButton")} onClick={()=> toggleTheme(theme === 'light' ? 'dark' : 'light')}/>          
+            <Button text={t("stopWatch.languageButton")} onClick={()=> handleChangeLanguage()}/>          
         </MyStopWatch>
     )
 
