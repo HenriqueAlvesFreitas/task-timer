@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MyButton = styled.button`
 
   align-self: center;
-  background-color: #88bcd1;
+  background-color: ${props=>props.theme.button.backgroundColor};
   border-radius: 10px;
   box-shadow: 2px 4px 4px #0000009F;
   color: #272626;
@@ -13,7 +13,7 @@ export const MyButton = styled.button`
   width: 150px;
   
   &:active {
-    background-color: #7CA6B7;
+    background-color: ${props=>props.theme.button.activeColor};
     box-shadow: 2px 2px 4px #0000009F inset;
   }
 

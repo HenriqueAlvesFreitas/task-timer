@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const MyApp = styled.div`
 
+  color: ${props => props.theme.textColor};
+	
   display: grid;
   grid-template-rows: min-content min-content auto;
   grid-template-areas: 
@@ -16,7 +18,7 @@ export const MyApp = styled.div`
   padding: 32px;
   box-sizing: border-box;
   border-radius: 10px;
-  background-color: #171717;
+  background-color: ${props=>props.theme.appBackgroundColor};
 
   @media screen and (min-width:1280px)  {
     grid-template-areas: 

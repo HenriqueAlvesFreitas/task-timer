@@ -34,7 +34,7 @@ export const MyList = styled.aside`
 
 
 .item {
-  background-color: #4D4D4D;
+  background-color: ${props=>props.theme.item.backgroundColor};
   border-radius: 8px;
   box-shadow: 2px 4px 4px #0000009F;
   padding: 12px;
@@ -48,7 +48,7 @@ export const MyList = styled.aside`
   }
 
   span {
-    color: #D0D0D0;
+    color: ${props=>props.theme.item.textColor};
   }
 
   @media screen and (min-width:1280px) {
@@ -57,12 +57,12 @@ export const MyList = styled.aside`
 }
 
 .itemSelecionado {
-  background-color: #292929;
+  background-color: ${props=>props.theme.item.selectedBackgroundColor};
   box-shadow: 2px 4px 4px #0000009F inset;
 }
 
 .itemCompletado {
-  background-color: #566F42;
+  background-color: ${props=>props.theme.item.completedBackgroundColor};
   cursor: auto;
 
   .concluido {

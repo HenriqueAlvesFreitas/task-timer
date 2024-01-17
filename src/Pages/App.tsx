@@ -7,7 +7,9 @@ import { ITask } from '../Types/Task';
 
 import MyContext from '../Context/Context';
 import { ThemeProvider } from 'styled-components';
-import { DarkTheme, LightTheme } from '../Components/Form/style';
+import { DarkTheme, LightTheme } from '../Context/Theme';
+import { MyBody } from '../bodyStyle';
+
 
 
 function App() {
@@ -50,14 +52,16 @@ function App() {
   return (
     <MyContext.Provider value={defaultContextValue}>
       <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
-        <MyApp> 
-          <Form setTaskList={setTaskList}/>
-          <List 
-            taskList={taskList}
-            selectTask={selectTask}
-          />
-          <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
-        </MyApp>
+        <MyBody>
+          <MyApp> 
+            <Form setTaskList={setTaskList}/>
+            <List 
+              taskList={taskList}
+              selectTask={selectTask}
+            />
+            <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
+          </MyApp>
+        </MyBody>
       </ThemeProvider>
     </MyContext.Provider>
   );

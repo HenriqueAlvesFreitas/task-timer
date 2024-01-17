@@ -44,7 +44,6 @@ export default function StopWatch({selectedTask, finishTask} :  Props){
     return(
         <MyStopWatch>
             <p className="titulo">Escolha um card e inicie o crônometro</p>
-            {time}
             <div className="relogioWrapper">
                 <Watch time={time}/>
             </div>

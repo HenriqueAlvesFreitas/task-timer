@@ -65,11 +65,8 @@ body {
 	display: flex;
 	justify-content: flex-start;
 	font-family: 'Manjari', sans-serif;
-	color: #F0F0F0;
-	background-color: #4C4C4C;
 	height: 100%;
 	width: 100%;
-	padding: 16px;
 	box-sizing: border-box;
 }
 

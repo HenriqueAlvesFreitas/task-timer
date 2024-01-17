@@ -9,7 +9,7 @@ export const MyForm = styled.form`
   display:flex;
   flex-direction: column;
   grid-area: nova-tarefa;
-  background-color: #7687A1;
+  background-color: ${props=> props.theme.inputBackgroundColor};
   border-radius: 10px;
   box-shadow: 2px 4px 4px #0000009F;
   padding: 12px;
@@ -32,11 +32,12 @@ export const MyForm = styled.form`
       border: unset;
       border-radius: 5px;
       background-color: ${props => props.theme.backgroundColor};
-      //background-color: #5D677C;
+     
       box-shadow: 0px 2px 4px #2D2B2B9F inset;
       
       &::placeholder {
-        color: #BFBFBF;
+        color: ${props => props.theme.placeholderColor};
+        
       }
     }
   }
@@ -70,10 +71,3 @@ export const MyForm = styled.form`
 
 `
 
-export const DarkTheme = {
-  backgroundColor: '#ffff'
-}
-
-export const LightTheme = {
-  backgroundColor: '#000'
-}
