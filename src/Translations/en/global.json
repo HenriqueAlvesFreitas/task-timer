@@ -6,7 +6,7 @@
         "button": "Add"
     },
     "list":{
-        "title": "Day Tasks"
+        "title": "Daily Tasks"
     },
     "stopWatch":{
          "title":"Choose a card and start the countdown",

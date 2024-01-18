@@ -15,11 +15,9 @@ interface Props{
 
 export default function StopWatch({selectedTask, finishTask} :  Props){
 
-    const [t, i18n] = useTranslation("global")
+    const [t] = useTranslation("global")
 
-    const [language, setLanguage] = useState("en")
-
-    const {theme, toggleTheme} = useContext(MyContext)
+   
 
     const [time, setTime] = useState<number>(timeToSeconds("00:00:00"))
     useEffect(()=>{
@@ -41,10 +39,7 @@ export default function StopWatch({selectedTask, finishTask} :  Props){
                     
     }
 
-    const handleChangeLanguage = () =>{
-        setLanguage(language === "en" ? "pt" : "en")
-        i18n.changeLanguage(language === "en" ? "pt" : "en")
-    }
+   
 
     
     return(
@@ -53,9 +48,7 @@ export default function StopWatch({selectedTask, finishTask} :  Props){
             <div className="relogioWrapper">
                 <Watch time={time}/>
             </div>
-            <Button text={t("stopWatch.button")} onClick={()=>startTask(time)}/>
-            <Button text={t("stopWatch.themeButton")} onClick={()=> toggleTheme(theme === 'light' ? 'dark' : 'light')}/>          
-            <Button text={t("stopWatch.languageButton")} onClick={()=> handleChangeLanguage()}/>          
+            <Button text={t("stopWatch.button")} onClick={()=>startTask(time)}/>                  
         </MyStopWatch>
     )
 

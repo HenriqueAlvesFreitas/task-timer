@@ -8,6 +8,7 @@ import { ITask } from '../Types/Task';
 import MyContext from '../Context/Context';
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme, LightTheme } from '../Context/Theme';
+import Aside from '../Components/Aside/Index';
 
 
 
@@ -59,6 +60,7 @@ function App() {
               selectTask={selectTask}
             />
             <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
+            <Aside/>
           </MyApp>
         </MyBody>
       </ThemeProvider>

@@ -14,6 +14,9 @@ export const DarkTheme = {
         backgroundColor: '#4D4D4D',
         selectedBackgroundColor: '#292929',
         completedBackgroundColor: '#566F42'
+    },
+    switch:{
+        backgroundColor: '#28292c'
     }
   }
   
@@ -33,5 +36,8 @@ export const DarkTheme = {
         backgroundColor: '#ffff',
         selectedBackgroundColor: '#cacdd2',
         completedBackgroundColor: '#67ac2f'
+    },
+    switch:{
+        backgroundColor: '#ffff'
     }
   }

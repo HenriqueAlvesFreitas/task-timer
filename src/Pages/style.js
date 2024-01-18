@@ -5,11 +5,12 @@ export const MyApp = styled.div`
   color: ${props => props.theme.textColor};
 	
   display: grid;
-  grid-template-rows: min-content min-content auto;
+  grid-template-rows: min-content min-content ;
   grid-template-areas: 
   "nova-tarefa"
   "cronometro"
   "tarefas"
+  "switch"
   ;
   row-gap: 24px;
   min-width: 320px;
@@ -22,8 +23,8 @@ export const MyApp = styled.div`
 
   @media screen and (min-width:1280px)  {
     grid-template-areas: 
-    "nova-tarefa tarefas"
-    "cronometro tarefas"
+    "nova-tarefa tarefas switch"
+    "cronometro tarefas switch"
     ;
     column-gap: 64px;
     grid-template-rows: min-content min-content;
