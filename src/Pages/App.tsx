@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Form from '../Components/Form/Index';
 import List from '../Components/List/Index';
 import StopWatch from '../Components/StopWatch/Index';
@@ -14,16 +14,9 @@ import Aside from '../Components/Aside/Index';
 
 function App() {
   const [taskList, setTaskList] = useState<ITask[] | []>([])
-  const [selectedTask, setSelected] = useState<ITask>()
+  const [selectedTask, setSelected] = useState<ITask | undefined>()
   
   const [theme, toggleTheme] = useState<string>('light')
-
-  const defaultContextValue = {
-      teste: "meu teste 2",
-      color: "#ffff",
-      theme: theme,
-      toggleTheme: toggleTheme
-  }
 
   const selectTask = (selectedTask : ITask) =>{
     setSelected(selectedTask);
@@ -34,6 +27,18 @@ function App() {
       }
     )))
   }
+
+  const defaultContextValue = {
+      taskList: taskList,
+      setTaskList: setTaskList,
+      selectedTask: selectedTask,
+      setSelected: setSelected,
+      theme: theme,
+      toggleTheme: toggleTheme,
+      selectTask: selectTask
+  }
+
+  
 
   const finishTask = () =>{
     if(selectedTask) {
@@ -54,11 +59,8 @@ function App() {
       <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
         <MyBody>
           <MyApp> 
-            <Form setTaskList={setTaskList}/>
-            <List 
-              taskList={taskList}
-              selectTask={selectTask}
-            />
+            <Form/>
+            <List />
             <StopWatch selectedTask={selectedTask} finishTask={finishTask}/>
             <Aside/>
           </MyApp>

@@ -1,14 +1,12 @@
+import { useContext } from "react";
 import { ITask } from "../../../Types/Task";
+import MyContext from "../../../Context/Context";
 
 
-interface Props extends ITask{
-    selectTask: (selectedTask : ITask) => void
 
-}
+export default function Item({title, time, selected, completed, id}: ITask){
 
-export default function Item({title, time, selected, completed, id, selectTask}: Props){
-
-    const checkMark = '../../Assets/img/check-mark.svg'
+    const {selectTask} = useContext(MyContext)
     
     return(
         <li 

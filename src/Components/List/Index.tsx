@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { MyList } from './style'
 import Item from './Item/Index'
-import { ITask } from '../../Types/Task'
 import { useTranslation } from 'react-i18next'
+import MyContext from '../../Context/Context'
 
-interface Props{
-    taskList : ITask[],
-    selectTask: (selectedTask : ITask) => void
+export default function List(){
 
-}
-
-export default function List({taskList, selectTask}: Props){
+    const {taskList} = useContext(MyContext)
 
     const [t] = useTranslation("global")
 
@@ -20,8 +16,7 @@ export default function List({taskList, selectTask}: Props){
             <h2>{t("list.title")}</h2>
             <ul>
                 {taskList.map((item, idx)=>(
-                    <Item
-                        selectTask={selectTask} 
+                    <Item 
                         key={item.id}
                         {...item}
                     />

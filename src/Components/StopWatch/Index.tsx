@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ITask } from "../../Types/Task";
 import Button from "../Button/Index";
 import { MyStopWatch } from "./Style";
 import Watch from "./Watch/Index";
 import { timeToSeconds } from "../../Common/Utils/Time";
-import MyContext from "../../Context/Context";
 import { useTranslation } from "react-i18next";
 
 interface Props{

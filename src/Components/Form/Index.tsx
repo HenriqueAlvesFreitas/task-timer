@@ -2,13 +2,15 @@ import React, { useContext, useState } from 'react'
 
 import { MyForm } from './style'
 import Button from '../Button/Index'
-import { ITask } from '../../Types/Task'
 import {v4 as uuidv4} from 'uuid';
 import { useTranslation } from 'react-i18next';
+import MyContext from '../../Context/Context';
 
-export default function Form({setTaskList}: {setTaskList : React.Dispatch<React.SetStateAction<ITask[]>>}){
+export default function Form(){
 
     const [state, setState] = useState({title: "", time: "00:00:00"})
+
+    const {setTaskList} = useContext(MyContext)
 
     const [t] = useTranslation("global")
 
