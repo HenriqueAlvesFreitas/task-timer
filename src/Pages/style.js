@@ -6,11 +6,11 @@ export const MyApp = styled.div`
 	
   display: grid;
   grid-template-rows: min-content min-content ;
-  grid-template-areas: 
+  grid-template-areas:
+  "switch" 
   "nova-tarefa"
   "cronometro"
   "tarefas"
-  "switch"
   ;
   row-gap: 24px;
   min-width: 320px;

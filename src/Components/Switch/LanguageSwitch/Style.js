@@ -130,5 +130,17 @@ export const MySwitch = styled.label`
   transform: translate(0);
 }
 
+@media screen and (max-width:1280px)  {
+  .theme-switch__container {
+  width: 75px;
+  height: 37.5px;
+  }
+
+  .theme-switch__circle-container {
+  left: -3px;
+  top: -7.5px;
+  }
+}
+
 
 `

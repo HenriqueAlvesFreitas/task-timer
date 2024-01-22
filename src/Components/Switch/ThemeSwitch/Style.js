@@ -62,4 +62,26 @@ export const Switch = styled.div`
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+
+@media screen and (max-width:1280px)  {
+  width: 75px;
+  height: 37.5px;
+
+  .switch-label {
+    width: 100%;
+    height: 37.5px;
+  }
+
+  .slider::before {
+    top: 7px;
+    left: 2px;
+    width: 23px;
+    height: 23px;
+  }
+
+  .checkbox:checked ~ .slider::before {
+    transform: translateX(45px);
+  }
+}
 `
