@@ -8,7 +8,7 @@ interface Props {
     selectedTask: ITask | undefined,
     setSelected:  React.Dispatch<React.SetStateAction<ITask | undefined>>,
     theme: string,
-    toggleTheme: React.Dispatch<React.SetStateAction<string>>,
+    toggleTheme: ()=>void,
     selectTask: (selectedTask : ITask)=>void;
 }
 

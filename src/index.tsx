@@ -8,9 +8,11 @@ import global_pt from "./Translations/pt/global.json"
 import i18next from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 
+
+
 i18next.init({
   interpolation:{escapeValue: true},
-  lng: "en",
+  lng: localStorage.getItem("language") || "en",
   resources:{
     en:{
       global: global_en
@@ -20,6 +22,8 @@ i18next.init({
     }
   }
 })
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

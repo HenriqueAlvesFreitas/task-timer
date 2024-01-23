@@ -15,7 +15,7 @@ export default function ThemeSwitch() {
                     type="checkbox" 
                     className="checkbox"
                     checked={theme === 'light' ? true : false}
-                    onChange={()=>toggleTheme(theme === 'light' ? 'dark' : 'light')}
+                    onChange={()=>toggleTheme()}
                 />
                 <span className="slider"></span>
             </label>

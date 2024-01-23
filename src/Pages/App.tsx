@@ -16,7 +16,7 @@ function App() {
   const [taskList, setTaskList] = useState<ITask[] | []>([])
   const [selectedTask, setSelected] = useState<ITask | undefined>()
   
-  const [theme, toggleTheme] = useState<string>('light')
+  const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "light")
 
   const selectTask = (selectedTask : ITask) =>{
     setSelected(selectedTask);
@@ -26,6 +26,11 @@ function App() {
       selected: item.id === selectedTask.id ? true : false
       }
     )))
+  }
+
+  const toggleTheme = () =>{
+    setTheme(theme === 'light' ? 'dark' : 'light' )
+    localStorage.setItem("theme", theme === 'light' ? 'dark' : 'light')
   }
 
   const defaultContextValue = {
@@ -53,6 +58,7 @@ function App() {
     }
 
   }
+
 
   return (
     <MyContext.Provider value={defaultContextValue}>

@@ -5,11 +5,12 @@ import { useTranslation } from "react-i18next";
 
 export default function LanguageSwitch(){
 
-    const [language, setLanguage] = useState("en")
+    const [language, setLanguage] = useState(localStorage.getItem("language") || "en")
 
     const [t, i18n] = useTranslation("global")
 
     const handleChangeLanguage = () =>{
+        localStorage.setItem("language", language === "en" ? "pt" : "en")
         setLanguage(language === "en" ? "pt" : "en")
         i18n.changeLanguage(language === "en" ? "pt" : "en")
     }
