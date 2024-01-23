@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import brazilFlag from "./../../../assets/img/brazil-flag.svg"
-import unitedFlag from "./../../../assets/img/us-flag.svg"
+import brazilFlag from "./../../../Assets/img/brazil-flag.svg"
+import unitedFlag from "./../../../Assets/img/us-flag.svg"
 
 export const MySwitch = styled.label`
 
