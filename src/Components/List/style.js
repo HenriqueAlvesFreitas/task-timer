@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import check from './../../Assets/img/check-mark.svg'
+import check from './../../Assets/Img/check-mark.svg'
 
 
 export const MyList = styled.aside`
